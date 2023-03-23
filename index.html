@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* 定义侧边栏 */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+/* 定义侧边栏中的链接 */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* 当鼠标悬停在链接上时，更改颜色 */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* 定义开启按钮 */
+.openbtn {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 50px;
+  opacity: 0.5;
+  width: 100px;
+  height: 50px;
+}
+
+/* 定义关闭按钮 */
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px !important;
+  margin-left: 50px;
+}
+
+/* 当鼠标悬停在关闭按钮上时，更改颜色 */
+.closebtn:hover {
+  color: #f1f1f1;
+}
+
+/* 样式化主内容 */
+.main {
+    transition: margin-left .5s;
+    padding:20px;
+}
+
+/* 当侧边栏打开时，将主内容向右移动250像素 */
+.openNav .main {
+    margin-left:250px;
+}
+
+/* 主体部分格式 */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: none;
+  padding: 10px;
+  border: none; /* Add this line to remove the border */
+  margin: 10px; /* Add this line to create space around the grid */
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none; /* Add this line to remove the border */
+  margin: 10px; /* Add this line to create space around the grid */
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<!-- 使用JavaScript打开侧边栏 -->
+<button onclick="openNav()" class="openbtn">≡</button>
+
+<!-- 定义侧边栏 -->
+<div id="mySidebar" class="sidebar">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</div>
+
+<!-- 主内容 -->
+<div class="main">
+<h1>琉璃神社</h1>
+<!-- 展示框 -->
+<div class="grid-container">
+  <div class="grid-item">
+    <img src="image.jpg" alt="Image">
+    <p>Some text here</p>
+  </div>
+  <div class="grid-item">
+    <img src="image.jpg" alt="Image">
+    <p>Some text here</p>
+  </div>
+  <div class="grid-item">
+    <img src="image.jpg" alt="Image">
+    <p>Some text here</p>
+  </div>
+  <div class="grid-item">
+    <img src="image.jpg" alt="Image">
+    <p>Some text here</p>
+  </div>
+  <div class="grid-item">
+    <img src="image.jpg" alt="Image">
+    <p>Some text here</p>
+  </div>
+  <div class="grid-item">
+    <img src="image.jpg" alt="Image">
+    <p>Some text here</p>
+  </div>
+</div>
+</div>
+
+<!-- 使用JavaScript关闭侧边栏 -->
+<script>
+function openNav() {
+document.getElementById("mySidebar").style.width = "250px";
+document.getElementById("main").style.marginLeft = "250px";
+document.body.classList.add("openNav");
+}
+
+function closeNav() {
+document.getElementById("mySidebar").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.classList.remove("openNav");
+}
+</script>
+
+</body>
+</html>
